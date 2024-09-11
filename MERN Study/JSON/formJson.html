@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" onsubmit="return validationForm()">
+      <label for="">Name : </label><input type="text" id="name">
+      <label for="">Age : </label><input type="text" id="age">
+      <label for="">Place : </label><input type="text" id="place">
+      <button type="submit">save</button>
+    </form>
+    <script>
+        function validationForm()
+        {
+            let name=document.getElementById('name').value;
+            let age=document.getElementById('age').value;
+            let place=document.getElementById('place').value;
+            data={'name':name,'age':age,'place':place}
+//here data is database 
+//this is the method of JSON
+            document.write((data.name))
+            document.write((data.age))
+            document.write((data.place))
+        }
+    </script>
+    
+</body>
+</html>

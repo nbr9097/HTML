@@ -1,0 +1,36 @@
+use school
+
+db.students.insertMany([{name:'fem',age:'21',grade:'A',subject:['physic','chemistry','maths']},
+{name:'briji',age:'23',grade:'B',subject:['biology','hindi','english']},])
+
+db.students.insertOne({name:'unni',age:'22',grade:'C',subject:['physic','malayalam','maths']})
+
+db.students.find()
+
+db.students.find({grade:'A'})
+
+db.students.updateOne({_id: ObjectId('66e17783a9ee9d8241197a3a')},{$set:{grade:'A+'}})
+
+db.students.find()
+
+db.students.deleteOne({_id: ObjectId('66e1770ea9ee9d8241197a39')})
+
+db.students.insertMany([{name:'fem',age:'21',grade:'A',subject:['physic','chemistry','maths']},
+{name:'briji',age:'23',grade:'B',subject:['biology','hindi','english']},])
+
+//pagination
+//full show cheyyand aavishym ulladh show cheyyand
+//limit(ethre ennam)
+//skip(first ethram skip akeettan show cheyyendath ennu kannikkunnu)
+db.students.find().limit(2).skip(1)
+
+//projection
+// ella field um showcase cheyyand
+//name um age um maathram showcase cheyyunnu (here 1 represent show and 0 represent not showing)
+db.students.find({},{name:1,age:1,_id:0})
+
+//sorting
+//name nte alphabetic orderl showcase cheyyan
+//1 indicate acending order
+/-1 indicate decending order
+db.students.find().sort({name:1})

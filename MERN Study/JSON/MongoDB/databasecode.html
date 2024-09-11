@@ -1,0 +1,30 @@
+//creating the database
+use college
+
+//creating a collection named student and insert one member details
+db.student.insertOne({
+    name:"noof",email:"hello@gmail.com"
+    })
+
+//inserting many member details using keyword 'insertMany()'
+db.student.insertMany(
+    [{name:'fem',email:'kfbhwb@gmsil.com'},
+    {name:'riya',email:'fssvsvs@gmail.com'}])  
+
+//showing all the details inside the table
+db.student.find()
+
+//showing a specified member
+db.student.find({name:'noof'})
+
+//update anyone of the member using objectId
+db.student.updateOne({_id:ObjectId('66e163c68a21b6b79beacdf1')},{$set:{email:'riya@gmail.com'}})
+
+// address is have more description
+db.student.insertOne({name:'briji',email:'briji@gmail.com',address:{street:'kunn',dist:'kozh',state:'kerala'}})
+
+//updateMany koduthath kond riya n ulla name varunna ellaidathum nammalk mattan pattum
+db.student.updateMany({name:'riya'},{$set:{email:"riyanaheeda@gmail.com"}})
+
+//delete one field
+db.student.deleteOne({_id:ObjectId('66e163c68a21b6b79beacdf1')})
