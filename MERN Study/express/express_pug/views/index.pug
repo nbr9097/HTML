@@ -1,0 +1,18 @@
+//-view/index.pug
+//-doctype html
+//-html
+  head 
+    title=tite
+extends layout 
+block content 
+
+ body
+   h1=message
+   img(src="images/welcome.avif", alt="")
+
+   p(style="font-family:Arial;color:blue") Here's a list of items:
+ 
+   ul
+     each item in items
+                 li=item 
+   h1 hai            
