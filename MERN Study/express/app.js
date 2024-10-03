@@ -1,7 +1,7 @@
 const express=require('express')
 const path=require('path')  //get directory path
 const app=express()
-const port=3000
+const port=300
 app.use(express.static('public'))// here public is a folder
 app.use(express.urlencoded()) //post method used there in the form 
 
